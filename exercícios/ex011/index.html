@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midias em HTML</title>
+</head>
+<body>
+    <h1>Imagem dinânica</h1>
+    <p>Tente abrir este site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador.</p>
+
+    <picture>
+        <source media="(max-width:750px)" srcset="imagens/foto-P.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-M.png" type="image/png">
+        <img src="imagens/foto-G.png" alt="Imagem flexível">
+    </picture>
+
+    <h1>Reproduznido audio</h1>
+    <p>Vamos aprender a reprroduzir audios em HTML</p>
+    <audio preload="metadata" autoplay controls loop>
+
+        <source src="midia/El Billete - Edgar Lopez and Quincas Moreira.mp3" type="audio/mpeg">
+        <source src="midia/El Billete - Edgar Lopez and Quincas Moreira.ogg" type="audio/ogg">
+        <source src="midia/El Billete - Edgar Lopez and Quincas Moreira.wav" type="audio/wav">
+        <p>Infelizmente o seu navegador não consegue reprooduzir audio <a href="midia/El Billete - Edgar Lopez and Quincas Moreira.mp3">Clique aqui para baixar o arquivo MP3</a></p>
+    </audio>
+
+</body>
+</html>
