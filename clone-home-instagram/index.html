@@ -17,9 +17,9 @@
             <!-- Login e Registro -->
             <div id="form-container">
                 <div id="form-box">
-                    <img src="img/logo_instagram.png" alt="Instagram">
-                    <form class="login-form">
-                        <input type="text" name="username" placeholder="Numero de telefone, usuário ou e-mal">
+                    <img id="logo-insta" src="img/logo_instagram.png" alt="Instagram">
+                    <form id="login-form">
+                        <input type="text" name="username" placeholder="Telefone, nome de usuário ou e-mal">
                         <input type="password" name="password" placeholder="Senha">
                         <input type="submit" value="Entrar">
                     </form>
@@ -29,8 +29,10 @@
                     </div>
                     <div class="other-links">
                         <div id="facebook-login">
-                            <img src="img/logo_facebook.svg" alt="Facebook Login">
-                            <span>Entrar como Facebook</span>
+                            <a href="#">
+                                <img src="img/logo_facebook.svg" alt="Facebook Login">
+                                <span>Entrar como Facebook</span>
+                            </a>
                         </div>
                         <div id="forgot-pass">
                             <a href="#">Esqueceu a senha?</a>
@@ -43,10 +45,10 @@
                 <div id="get-app-container">
                     <p>Obtenha o aplicativo</p>
                     <a href="#">
-                        <img src="img/apple_btn.png" alt="Apple Store">
+                        <img src="img/gplay_btn.png" alt="Google Play">
                     </a>
                     <a href="#">
-                        <img src="img/gplay_btn.png" alt="Google Play">
+                        <img src="img/logo-microsoft.png" alt="Microsoft">
                     </a>
                 </div>
             </div>
@@ -70,7 +72,9 @@
                 <li><a href="#">Meta Verified</a></li>
             </ul>
         </nav>
-        <p id="copyright">&copy; 2024 Instagram from Meta</p>
+        <div class="copyright">
+        <p id="copyright"><a href="#">Português (Brasil)</a> &copy; 2024 Instagram from Meta</p>
+    </div>
     </footer>
 </body>
 </html>
