@@ -236,3 +236,5 @@ const result = factorial(num)
 
 console.log(`O fatorial do número ${num} é ${result}`);
 
+
+
