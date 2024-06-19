@@ -128,12 +128,90 @@
 
 // 9 - Loop em array
 
-const users = ["Rodolfo", "Lucas", "Bianca", "Renata"]
+const users = ["Rodolfo", "Lucas", "Bianca", "Renata"];
 
 
 for(let i = 0; i < users.length; i++) {
     console.log(`Listando o usuário: ${users[i]}`);
 }
+
+// // 10 - Push  e Pop
+
+// const array = ["a", "b", "c"];
+
+// array.push("d");
+
+// console.log(array.length);
+
+// array.pop();
+
+// console.log(array);
+
+// const itemRemovido = array.pop();
+
+// console.log(itemRemovido);
+
+// console.log(array);
+
+// array.push("z", "x", "y", "z");
+
+// console.log(array);
+
+// // 11 - Shift e Unshift
+
+// const letters = ["a", "b", "c"];
+
+// const letter = letters.shift();
+
+// console.log(letter);
+
+// console.log(letters);
+
+// letters.unshift("p", "q", "r");
+
+// letters.unshift("z");
+
+// console.log(letters);
+
+// // 12 - IndexOf e LastindexOf
+
+// const myElements = ["Morango", "Maçã", "Abacate", "Pêra", "Abacate"];
+
+// console.log(myElements.indexOf("Maçã"));
+
+// console.log(myElements.indexOf("Abacate"));
+
+// console.log(myElements[2]);
+
+// console.log(myElements[myElements.indexOf("Abacate")]);
+
+// console.log(myElements.lastIndexOf("Abacate"));
+
+// console.log(myElements.indexOf("Melão"));
+
+// console.log(myElements.lastIndexOf("Melão"));
+
+// 13 - Slice
+
+const testeSlice = ["a", "b", "c", "d", "e", "f"];
+
+const subArray = testeSlice.slice(2,4);
+
+console.log(subArray);
+
+console.log(testeSlice);
+
+const subArray2 = testeSlice.slice(2,4 + 1);
+
+console.log(subArray2);
+
+const subArray3 = testeSlice.slice(10, 20);
+
+console.log(subArray3);
+
+const subArray4 = testeSlice.slice(2);
+
+console.log(subArray4);
 
 
 
