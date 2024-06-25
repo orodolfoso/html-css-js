@@ -191,56 +191,211 @@ for(let i = 0; i < users.length; i++) {
 
 // console.log(myElements.lastIndexOf("Melão"));
 
-// 13 - Slice
+// // 13 - Slice
 
-const testeSlice = ["a", "b", "c", "d", "e", "f"];
+// const testeSlice = ["a", "b", "c", "d", "e", "f"];
 
-const subArray = testeSlice.slice(2,4);
+// const subArray = testeSlice.slice(2,4);
 
-console.log(subArray);
+// console.log(subArray);
 
-console.log(testeSlice);
+// console.log(testeSlice);
 
-const subArray2 = testeSlice.slice(2,4 + 1);
+// const subArray2 = testeSlice.slice(2,4 + 1);
 
-console.log(subArray2);
+// console.log(subArray2);
 
-const subArray3 = testeSlice.slice(10, 20);
+// const subArray3 = testeSlice.slice(10, 20);
 
-console.log(subArray3);
+// console.log(subArray3);
 
-const subArray4 = testeSlice.slice(2);
+// const subArray4 = testeSlice.slice(2);
 
-console.log(subArray4);
+// console.log(subArray4);
 
-// 14 - forEach
+// // 14 - forEach
 
-const nums = [1,2,3,4,5];
+// const nums = [1,2,3,4,5];
 
-nums.forEach((numero) => {
-    console.log(`O número é ${numero}`);
-})
+// nums.forEach((numero) => {
+//     console.log(`O número é ${numero}`);
+// })
 
-const posts = [
-    {title: "Primeiro post", category: "PHP"},
-    {title: "Segundo post", category: "Javascript"},
-    {title: "Terceiro post", category: "Python"},
-];
+// const posts = [
+//     {title: "Primeiro post", category: "PHP"},
+//     {title: "Segundo post", category: "Javascript"},
+//     {title: "Terceiro post", category: "Python"},
+// ];
 
-posts.forEach((post) =>{
-    console.log(`Exibindo post: ${post.title}, da categoria: ${post.category}`);
-})
+// posts.forEach((post) =>{
+//     console.log(`Exibindo post: ${post.title}, da categoria: ${post.category}`);
+// })
 
-// 15 - Includes
+// // 15 - Includes
 
-const brands = ["BMW", "VW", "FIAT"];
+// const brands = ["BMW", "VW", "FIAT"];
 
-console.log(brands.includes("FIAT"));
+// console.log(brands.includes("FIAT"));
 
-console.log(brands.includes("KIA"));
+// console.log(brands.includes("KIA"));
 
-if(brands.includes("BMW")) {
-    console.log("Há carros da marca BMW!");
+// if(brands.includes("BMW")) {
+//     console.log("Há carros da marca BMW!");
+// }
+
+// // 16 - Reverse
+
+// const reverseTeste = [1,2,3,4,5];
+
+// reverseTeste.reverse();
+
+// console.log(reverseTeste);
+
+// // 17 - Trim
+
+// const trimTest = "  testando \n  ";
+
+// console.log(trimTest);
+
+// console.log(trimTest.trim());
+
+// console.log(trimTest.length);
+
+// console.log(trimTest.trim().length);
+
+// // 18 - padStart
+
+// const testePadstart = "1";
+
+// const newNumber = testePadstart.padStart(4, "0");
+
+// console.log(testePadstart);
+
+// console.log(newNumber);
+
+// const testePadEnd = newNumber.padEnd(10, "0");
+
+// console.log(testePadEnd);
+
+// // 19 - Split
+
+// const frase = "O rato roeu a roupa do rei de Roma";
+
+// const arrayDaFrase = frase.split(" ");
+
+// console.log(arrayDaFrase);
+
+
+// // 20 - join
+
+// const fraseDeNovo = arrayDaFrase.join(" ");
+
+// console.log(fraseDeNovo);
+
+// const itensParaComprar = ["Mouse", "Teclado", "Monitor"];
+
+// const fraseDeCompra = ` Precisamos comprar: ${itensParaComprar.join(", ")}.`
+
+// console.log(fraseDeCompra);
+
+// // 21 - Repeat
+
+// const palavra = "Testando ";
+
+// console.log(palavra.repeat(5));
+
+// // 22 - Rest Operator
+
+// const somaInfinita = (...args) => {
+//     let total = 0;
+
+//     for (let i = 0; i < args.length; i++) {
+//         total += args[i];
+//     }
+
+//     return total;
+    
+// };
+
+// console.log(somaInfinita(1,2,3));
+
+// console.log(somaInfinita(1,20,34,3242,5457,1238,23,55,472));
+
+// // 23 - for of
+
+// const somaInfinita2 = (...args) => {
+//     let total = 0
+
+//     for (num of args) {
+//         total += num;
+//     }
+
+//     return total;
+// };
+
+// console.log(somaInfinita2(1,2,3,4));
+
+// console.log(somaInfinita2(1,23,452,1427,23,58));
+
+// 24 - Destructuring em objetos
+
+const userDetails = {
+    firstName: "Rodolfo",
+    lastName: "Oliveira",
+    job: "Programador",
 }
+
+const {firstName, lastName, job} = userDetails;
+
+console.log(firstName, lastName, job);
+
+// Renomear as variáveis
+
+const {firstName: primeiroNome} = userDetails;
+
+console.log(firstName);
+
+
+// 25 - Destructuring com arrays
+
+const myList = ["Avião", "Submarino", "Carro"];
+
+const [veiculoA, veiculoB, veiculoC] = myList
+
+console.log(veiculoA, veiculoB, veiculoC);
+
+// 26 - JSON
+
+const myJson = '{"name": "Rodolfo", "age": 39, "skills": ["PHP", "JavaScript", "Python"]}';
+
+console.log(myJson);
+
+console.log(typeof myJson);
+
+// 27 - JSON para objeto e objeto para JSON
+
+const myObject = JSON.parse(myJson);
+
+console.log(myObject);
+
+console.log(myObject.name);
+
+console.log(typeof myObject);
+
+// json inválido
+
+const badJason = '{"name": Rodolfo, "age": 39}'
+
+// const myObject = JSON.parse(badJason);
+
+myObject.isOpenToWork= true;
+
+console.log(myObject);
+
+const myNewJSON = JSON.stringify(myObject);
+
+console.log(myNewJSON);
+
+console.log(typeof myNewJSON);
 
 
