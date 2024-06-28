@@ -1,69 +1,284 @@
 // 1 - Métodos
 
-const animal = {
-    nome: "Bob",
-    latir: function() {
-        console.log("Au au")
+// const animal = {
+//     nome: "Bob",
+//     latir: function() {
+//         console.log("Au au")
+//     }
+// };
+
+// console.log(animal.nome);
+
+// animal.latir();
+
+// // 2 - Aprofundando em Métodos
+
+// const pessoa = {
+//     nome: "Rodolfo",
+//     getNome: function() {
+//         return this.nome;
+//     },
+
+//     setNome: function(novonome) {
+//         this.nome = novonome;
+//     }
+// };
+
+// console.log(pessoa.nome);
+
+// console.log(pessoa.getNome());
+
+// pessoa.setNome("Lucas");
+
+// console.log(pessoa.getNome());
+
+// // 3 - Prototypes
+
+// const text = "asd";
+
+// console.log(Object.getPrototypeOf(text));
+
+// const bool = true;
+
+// console.log(Object.getPrototypeOf(bool));
+
+// const arr = [];
+
+// console.log(arr.length);
+
+// console.log(Object.getPrototypeOf(arr));
+
+// // 4 - Mais sobre Prototypes
+
+// const myObject = {
+//     a: "b",
+// };
+
+// console.log(Object.getPrototypeOf(myObject));
+
+// console.log(Object.getPrototypeOf(myObject) === Object.prototype);
+
+// const mySecondObject = Object.create(myObject);
+
+// console.log(mySecondObject);
+
+// console.log(mySecondObject.a);
+
+// console.log(Object.getPrototypeOf(mySecondObject) === myObject);
+
+// 5 - Classes básicas
+
+// const cachorro = {
+//     raca: null,
+//     patas: 4,
+// }
+
+// const pastorAlemao = Object.create(cachorro);
+
+// pastorAlemao.raca = "Pastor Alemão";
+
+// console.log(pastorAlemao);
+
+// console.log(pastorAlemao.patas);
+
+// const bulldog = Object.create(cachorro);
+
+// bulldog.raca = "Bulldog";
+
+// console.log(bulldog);
+
+// // 6 - Função como classe - função construtora
+
+// function criarCachorro(nome, raca) {
+//     const cachorro = Object.create({});
+
+//     cachorro.nome = nome;
+//     cachorro.raca = raca;
+
+//     return cachorro;
+// }
+
+// const bob = criarCachorro("Bob", "Vira-lata");
+
+// console.log(bob);
+
+// const jack = criarCachorro("Jack", "Poodle");
+
+// console.log(jack);
+
+// console.log(Object.getPrototypeOf(jack));
+
+// // 7 - funções como classe
+
+// function Cachorro(nome, raca) {
+//     this.nome = nome;
+//     this.raca = raca;
+// }
+
+// const husky = new Cachorro("Ozzy", "Husky");
+
+// console.log(husky);
+
+// // 8 - Métodos da função construtora
+
+// Cachorro.prototype.uivar = function () {
+//     console.log("Auuuu!");
+// };
+
+// console.log(Cachorro.prototype);
+// husky.uivar();
+
+// // 9 - Classes ES6
+
+// class CachorroClasse {
+//     constructor(nome, raca) {
+//         this.nome = nome;
+//         this.raca = raca;
+//     }
+// }
+
+// const jeff = new CachorroClasse("Jeff", "Labrador");
+
+// console.log(jeff);
+
+// console.log(Object.getPrototypeOf(jeff));
+
+// // 10 - Mais sobre as classe
+
+// class Caminhao {
+//     constructor(eixos, cor) {
+//         this.eixos = eixos;
+//         this.cor = cor;
+//     }
+
+//     descreverCaminhao() {
+//         console.log(`Este caminhão tem ${this.eixos} eixos e é da cor ${this.cor} `);
+//     }
+// }
+
+// const scania = new Caminhao(6 , "Vermelha");
+
+// console.log(scania);
+
+// scania.descreverCaminhao();
+
+// Caminhao.motor = 4;
+
+// const c2 =  new Caminhao(4, "Preta");
+
+// console.log(c2);
+
+// console.log(c2.motor);
+
+// Caminhao.prototype.motor = 4.0
+
+// const c3 = new Caminhao(6, "Azul");
+
+// console.log(c3.motor);
+
+// 11 - Override
+
+class Humano {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
     }
-};
+}
 
-console.log(animal.nome);
+const rodolfo = new Humano("Rodolfo", 31);
 
-animal.latir();
+console.log(rodolfo);
 
-// 2 - Aprofundando em Métodos
+Humano.prototype.idade = "Não definida";
 
-const pessoa = {
-    nome: "Rodolfo",
-    getNome: function() {
-        return this.nome;
-    },
+console.log(rodolfo.idade);
 
-    setNome: function(novonome) {
-        this.nome = novonome;
+console.log(Humano.prototype.idade);
+
+// 12 - Symbol
+
+class Aviao {
+    constructor(marca, turbina) {
+        this.marca = marca;
+        this.turbina = turbina;
     }
-};
+}
 
-console.log(pessoa.nome);
+const asas = Symbol()
 
-console.log(pessoa.getNome());
+const pilotos = Symbol()
 
-pessoa.setNome("Lucas");
+Aviao.prototype[asas] = 2
+Aviao.prototype[pilotos] = 3
 
-console.log(pessoa.getNome());
+const boeing = new Aviao("Boeing", 10);
 
-// 3 - Prototypes
+console.log(boeing);
 
-const text = "asd";
+console.log(boeing[asas]);
+console.log(boeing[pilotos]);
 
-console.log(Object.getPrototypeOf(text));
+// 13 - Getter e Setter
 
-const bool = true;
+// class Post {
+//     constructor(titulo, descricao, tags){
+//         this.titulo = titulo;
+//         this.descricao = descricao;
+//         this.tags = tags;
+//     }
 
-console.log(Object.getPrototypeOf(bool));
+//     get exibirTitulo() {
+//         return `Você está lendo ${this.titulo}`;
+//     }
 
-const arr = [];
+//     set adicionarTags(tags) {
+//         const tagsArray = tags.split(", ")
+//         this.tags = tagsArray
+//     }
+// }
 
-console.log(arr.length);
+// const myPost = new Post("Algum post", "É um post sobre programação");
 
-console.log(Object.getPrototypeOf(arr));
+// console.log(myPost);
 
-// 4 - Mais sobre Prototypes
+// console.log(myPost.exibirTitulo);
 
-const myObject = {
-    a: "b",
-};
+// myPost.adicionarTags = "programção", "javascript", "js";
 
-console.log(Object.getPrototypeOf(myObject));
+// conseole.log(myPost);
 
-console.log(Object.getPrototypeOf(myObject) === Object.prototype);
+// 14 - Herança
 
-const mySecondObject = Object.create(myObject);
+class Mamifero {
+    constructor(patas) {
+        this.patas = patas;
+    }
+}
 
-console.log(mySecondObject);
+class Lobo extends Mamifero{
+    constructor(patas, nome) {
+        super(patas, patas)
+        this.nome = nome;
+    }
+}
 
-console.log(mySecondObject.a);
+const shark = new Lobo (4, "Shark");
 
-console.log(Object.getPrototypeOf(mySecondObject) === myObject);
+console.log(shark);
+
+console.log(shark.patas);
+
+// 15 - Operador Instanceof
+
+console.log(shark instanceof Lobo);
+
+console.log(Lobo instanceof Mamifero);
+
+console.log(new Lobo(4, "teste") instanceof Mamifero);
+
+console.log(new Post("a", "b") instanceof Lobo);
+
+
+
 
 
