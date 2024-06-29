@@ -178,45 +178,45 @@
 
 // 11 - Override
 
-class Humano {
-    constructor(nome, idade) {
-        this.nome = nome;
-        this.idade = idade;
-    }
-}
+// class Humano {
+//     constructor(nome, idade) {
+//         this.nome = nome;
+//         this.idade = idade;
+//     }
+// }
 
-const rodolfo = new Humano("Rodolfo", 31);
+// const rodolfo = new Humano("Rodolfo", 31);
 
-console.log(rodolfo);
+// console.log(rodolfo);
 
-Humano.prototype.idade = "Não definida";
+// Humano.prototype.idade = "Não definida";
 
-console.log(rodolfo.idade);
+// console.log(rodolfo.idade);
 
-console.log(Humano.prototype.idade);
+// console.log(Humano.prototype.idade);
 
-// 12 - Symbol
+// // 12 - Symbol
 
-class Aviao {
-    constructor(marca, turbina) {
-        this.marca = marca;
-        this.turbina = turbina;
-    }
-}
+// class Aviao {
+//     constructor(marca, turbina) {
+//         this.marca = marca;
+//         this.turbina = turbina;
+//     }
+// }
 
-const asas = Symbol()
+// const asas = Symbol()
 
-const pilotos = Symbol()
+// const pilotos = Symbol()
 
-Aviao.prototype[asas] = 2
-Aviao.prototype[pilotos] = 3
+// Aviao.prototype[asas] = 2
+// Aviao.prototype[pilotos] = 3
 
-const boeing = new Aviao("Boeing", 10);
+// const boeing = new Aviao("Boeing", 10);
 
-console.log(boeing);
+// console.log(boeing);
 
-console.log(boeing[asas]);
-console.log(boeing[pilotos]);
+// console.log(boeing[asas]);
+// console.log(boeing[pilotos]);
 
 // 13 - Getter e Setter
 
@@ -249,34 +249,34 @@ console.log(boeing[pilotos]);
 
 // 14 - Herança
 
-class Mamifero {
-    constructor(patas) {
-        this.patas = patas;
-    }
-}
+// class Mamifero {
+//     constructor(patas) {
+//         this.patas = patas;
+//     }
+// }
 
-class Lobo extends Mamifero{
-    constructor(patas, nome) {
-        super(patas, patas)
-        this.nome = nome;
-    }
-}
+// class Lobo extends Mamifero{
+//     constructor(patas, nome) {
+//         super(patas, patas)
+//         this.nome = nome;
+//     }
+// }
 
-const shark = new Lobo (4, "Shark");
+// const shark = new Lobo (4, "Shark");
 
-console.log(shark);
+// console.log(shark);
 
-console.log(shark.patas);
+// console.log(shark.patas);
 
-// 15 - Operador Instanceof
+// // 15 - Operador Instanceof
 
-console.log(shark instanceof Lobo);
+// console.log(shark instanceof Lobo);
 
-console.log(Lobo instanceof Mamifero);
+// console.log(Lobo instanceof Mamifero);
 
-console.log(new Lobo(4, "teste") instanceof Mamifero);
+// console.log(new Lobo(4, "teste") instanceof Mamifero);
 
-console.log(new Post("a", "b") instanceof Lobo);
+// console.log(new Post("a", "b") instanceof Lobo);
 
 
 
