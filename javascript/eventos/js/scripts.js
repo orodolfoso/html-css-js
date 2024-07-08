@@ -50,3 +50,103 @@ btnInsideContainer.addEventListener("click", (e) => {
     e.stopPropagation();
     console.log("Evento 2");
 });
+
+// 5 - Removendo evento padrão
+
+const a = document.querySelector("a");
+
+a.addEventListener("click", (e) => {
+    console.log("Não alterou a página");
+    e.preventDefault();
+});
+
+// 6 - Eventos de tecla
+
+document.addEventListener("keyup", (e) =>{
+    console.log(`Soltou a tecla ${e.key}`);
+});
+
+document.addEventListener("keydown", (e) =>{
+    console.log(`Apertou a tecla ${e.key}`);
+});
+
+// 7 - Eventos de mouse
+
+const mouseEvents = document.querySelector("#mouse");
+
+mouseEvents.addEventListener("mousedown", () => {
+    console.log("Precionou o botão");
+});
+
+mouseEvents.addEventListener("mouseup", () => {
+    console.log("Soltou o botão");
+});
+
+mouseEvents.addEventListener("dblclick", () => {
+    console.log("Clique duplo");
+});
+
+// 8 - Movimento do mouse
+
+document.addEventListener("mousemove", (e) =>{
+    // console.log(`No eixo X: ${e.x}` );
+    // console.log(`No eixo Y: ${e.y}` );
+
+});
+
+// 9 - Eventos por Scroll
+
+window.addEventListener("scroll", (e) => {
+    if(window.scrollY > 200) {
+        console.log("Passamos de 200px");
+    }
+});
+
+
+// 10 - Eventos por focus/blur
+
+const input = document.querySelector("#my-input");
+
+input.addEventListener("focus", (e) => {
+    console.log("Entrou no input");
+});
+
+input.addEventListener("blur", (e) => {
+    console.log("Saiu no input");
+});
+
+// 11 - Evento de carregamento 
+
+window.addEventListener("load", () => {
+    console.log("A página carregou!");
+});
+
+window.addEventListener("beforeunload", (e) => {
+    e.preventDefault();
+    e.returnValue = "teste"; 
+});
+
+
+// 12 - Debouce
+
+const debouce = (f, delay) => {
+    
+    let timeout;
+
+    return (...arguments) => {
+        if(timeout) {
+            clearTimeout(timeout)
+        }
+
+        timeout = setTimeout(() => {
+            f.apply(arguments);
+        }, delay);
+    };
+};
+
+window.addEventListener(
+    "mousemove", 
+    debouce (() => {
+    console.log("Executando evento a cada 400ms");
+}, 400)
+);
